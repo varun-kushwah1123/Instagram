@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../SpecialCase/invite.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <section class="userslist">
+
+    </section>
+</body>
+<script>
+    var path = "../assets/users/";
+    var users = [];
+    var names = 0;
+    var userimg = [
+        'unknownuser.jpg','bharatdp.jpg','unknownuser.jpg','riddhidp.jpg','anupdp.jpg','tanay.jpg','sanskrutidp.jpg','veddp.jpg', 'ishmitdp.jpg','shravidp.jpg','dhanashridp.jpg','ketkidp.jpg','pranalidp.jpg', 'ridhidp.jpg', 'nikhildp.jpg', 'shreyadp.jpg',
+        'shradhadp.jpg', 'omkardp.jpg','jaygoridp.jpg','advaitdp.jpg','samikhadp.jpg',
+        'jaidp.jpg','srujandp.jpg','sudarshandp.jpg','sohumdp.jpg','shrishdp.jpg','sarthakdp.jpg','bhaktidp.jpg','nachiketdp.jpg','sahildp.jpg','devdp.jpg','bhumidp.jpg','asavaridp.jpg','aayushidp.jpg',
+        'vrushaldp.jpg','atharvadp.jpg','samekhdp.jpg','sailidp.jpg','vedantdp.jpg','siddeshdp.jpg','adityadp.jpg','shrushtidp.jpg','surajdp.jpg',
+        'riyadp.jpg','prenadp.jpg','sonudp.jpg'
+    ]
+    for (let j = 0; j < userimg.length; j++) {
+        users.push(`${path}${userimg[j]}`);
+    }
+    var username = ['hemanth_.k.reddy','bharat_badami','_m.ankith_','_.angelsmile._666','anuprb2312','_tanay_777_','sanskruuijadhav','_ved_03','deshpxnde._','sharviiiiiiiii_07','lilsweet_heart_','wellbegin._','_.itssp', 'rid_.15', 'nikh_il.hegde', 'shreya_2813', 'sxhrads', '___omkarrr_','jaygori81','advait__16','samiksh.aa', 'smiling_jai','shammi_2006','sudarshan02_','officialalgeo','exotic.shrish','_sarthakk__15','bhakti4970','nachiketpatil__9624','_sahil_0995__','devgoswami_7','bhumihajra','blx_ss0m_','__aayushii__884','vr_ush_al_9','clerical_ex__','sameksh_.y','sailijadhav_22','_vedantttt.__','siddhesh_7978_','itz__adii_here','iykyk.srushtiiii','suraj_saji_','riya_jain_2507','itzz_prerana_043','wtf_itz_sonu'];
+
+    var usersub = [
+        'Hemanth Reddy','Bharat M Badami','Ankith','RiddhiPawar','ANUP','Tanay','Sanskruti Jadhav❤','Ved👽','Ishmit🛳️','Sharvi🦋','lilsweet heart 🖤','ketki!!!','♡ :)', 'Ridima Mali', 'Nikhil Hegde', '𝙎𝙝𝙧𝙚𝙮𝙖 🖤',
+        'ＳＨＲＡＤＤＨＡ', '_Omkar...','Jay Gori','Advait Anuj Vaijapurkar',
+        'try again.','jai sharma','👑 𝐒𝐡𝐚𝐦𝐦𝐢 𝐉𝐡𝐚 👑','Sudarshan Mohan','Sohum Raut','𝚂𝚑𝚛𝚒𝚜𝚑 𝙺𝚑𝚎𝚍𝚎𝚔𝚊𝚛','सार्थक__Jadhav_','Bhakti shah','NACHIKET','SAHIL♡','Dev Goswami','Bhumi Hajra','2006☘','__Aayushi__','VrUsHaL','Atharva Shinde','S A M E K S H 💛','SAILI...❤️🦋','vedant🧃','𝑺𝒊𝒅𝒅𝒉𝒆𝒔𝒉 𝑫𝒉𝒆𝒏𝒅𝒆🚀❤️','Aditya','srushtiiiiiii!!!','_¿_Not _Me_¿','Riya Jain','Prerana!♡','trunaa💜'
+    ]
+
+    function load() {
+        for (let i = 0; i < users.length; i++) {
+            let dom = document.querySelector('.userslist');
+            var main = document.createElement('div');
+            main.setAttribute('class', 'maindom');
+            main.classList.add('flex', 'flexrow', 'centerX', 'centerY');
+
+            var userpic = document.createElement('img');
+            userpic.setAttribute('class', 'userimage');
+            userpic.setAttribute('src', users[i]);
+
+            var userdom = document.createElement('div');
+            userdom.setAttribute('class', 'userdom');
+            userdom.classList.add('flex', 'flex-column', 'centerX');
+
+            var username_dis = document.createElement('div');
+            username_dis.setAttribute('class', 'userdisplay');
+            var atag = document.createElement('a');
+            atag.href = 'https://www.instagram.com/'+username[i]+'/';
+            atag.setAttribute('target','_parent');
+            atag.innerHTML = username[i];
+            username_dis.appendChild(atag);
+
+            var subtitle = document.createElement('div');
+            subtitle.setAttribute('class', 'subtitle');
+            subtitle.innerHTML = usersub[i]
+
+            var morediv = document.createElement('div');
+            morediv.setAttribute('class', 'morediv');
+            morediv.classList.add('flex', 'flex-column', 'centerX', 'centerY');
+            main.appendChild(morediv);
+            morediv.innerHTML = '<button class="leave">Message</button><br><button class="leave">Report</button>';
+            morediv.id = 'id_' + i;
+
+            var moreoptions = document.createElement('div');
+            moreoptions.setAttribute('class', 'moreopt');
+            moreoptions.classList.add('material-symbols-outlined');
+            moreoptions.innerHTML = 'more_vert';
+            moreoptions.id = i;
+            moreoptions.onclick = (e) => {
+                scalediv(e.target.id);
+            }
+
+            // Appending fucntions ..... 
+            dom.appendChild(main);
+            userdom.appendChild(username_dis);
+            userdom.appendChild(subtitle);
+            main.appendChild(userpic);
+            main.appendChild(userdom);
+            main.appendChild(moreoptions);
+        }
+
+    }
+
+    setTimeout(load, 100);
+    function scalediv(Id, res) {
+        names = Id;
+        var x = document.getElementById('id_' + Id);
+        x.style.transform = 'scale(0.8)';
+
+    }
+</script>
+
+</html>

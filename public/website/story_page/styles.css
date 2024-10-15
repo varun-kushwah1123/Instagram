@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.story-container {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    overflow:visible;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+}
+
+.story-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #ffffff;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.login-message .logo{
+    margin: 1.23rem 0;
+}
+
+
+.username {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+
+.close-btn {
+    margin-left: auto;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+}
+
+.story-content {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+}
+
+#ff{
+    position: absolute;
+    top: -45px;
+    color:white;
+    left: 5rem;
+    font-size: 1rem;
+}
+
+.login-prompt {
+    color: #777;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    border-radius: 100%;
+    border:1px solid rgb(0,0,0)
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.open-instagram, .continue-facebook {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.open-instagram {
+    background-color: #3897f0;
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+}
+
+.continue-facebook {
+    background-color: transparent;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight:600;
+    color: #3897f0;
+    margin-bottom: 0px;
+    padding-bottom: 4px;
+}
+
+.login-message a{
+    outline: none;
+    text-decoration: none;
+}
+
+#ee a{
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0 3px;
+}
+
+#ee {
+    font-size: 1rem;   
+}
+
+.login-message hr{
+
+    width: 100%;
+    margin: auto;
+    margin-bottom: 12px;
+}
+
+.continue-facebook{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.continue-facebook p{
+    margin-top: 5px;
+    color: #3897f0;
+    font-size: 1rem;
+}
+
+#fb{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.facebook-icon {
+    width: 26px;
+    height: 26px;
+    margin:0 8px 9px;
+}
+
+.login-links {
+    font-size: 12px;
+    color: #555;
+}
+
+.login-links a {
+    color: #3897f0;
+    text-decoration: none;
+}
+
+.login-links a:hover {
+    text-decoration: underline;
+}
+body{
+    position: relative;
+    overflow: hidden;
+    
+
+}
+.latest {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px 8px;
+}
+.classdede{
+    width: 95%;
+    height: 2px;
+    background-color: rgb(150,150,150);
+    border-radius: 5rem;
+}
+.latest2{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.classdede3{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 4px 0;
+}
+.classdede3 img{
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    border: 1px solid rgb(150,150,150);
+    margin-right: 8px;
+}
+
+.classdede2{
+    color: white;
+    margin-right: 0.5rem;
+
+}

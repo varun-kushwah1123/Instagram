@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Story Page Clone</title>
+    <link rel="stylesheet" href="/story_page/styles.css">
+</head>
+<body>
+    <div class="story-container">
+        <div class="story-content">
+            <h3 id="ff" >Login to view story</h3>
+            <div class="login-message">
+                <img class="logo" src="/story_page/profile.jpg" alt="Instagram Logo">
+                <h2>See this story before it disappears</h2>
+                <p>Check out the latest photos and videos on Instagram after you follow them.</p>
+                <a href="/login">
+                    <button class="open-instagram">Open Instagram</button>
+                </a>
+                <a id="fb" href="https://www.facebook.com/">
+                    <button class="continue-facebook">
+                        <img class="facebook-icon" src="/story_page/facebook-icon.png" alt="Facebook Icon">
+                        <p>Continue with Facebook</p>
+                    </button>
+                </a>
+                <hr>
+                <p id="ee" class="login-links"><a href="/login">Log in</a> or <a href="/login">sign up</a></p>
+            </div>
+        </div>
+    </div>
+    <div  class="latest">
+        <div class="classdede">
+            
+        </div>
+        <div class="latest2">
+            <div class="classdede3" onclick="instagram()">
+                <img src="/story_page/profile.jpg"/>
+                varun_.kushwah
+ 
+            </div>
+            <div class="classdede2" onclick="closebtn()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                  </svg>
+            </div>
+        </div>
+    </div>  
+
+</body>
+<script >
+    function closebtn(){
+        window.close();
+    }
+    function instagram(){
+        window.open("https://instagram.com")
+    }
+</script>
+</html>

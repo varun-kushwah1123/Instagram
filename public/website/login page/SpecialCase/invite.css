@@ -1,0 +1,234 @@
+@font-face {
+    font-family: "Instagram Sans";
+    src: url(../assets/fonts/Instagram\ Sans\ Medium.woff);
+}
+
+@font-face {
+    font-family: "Instagram Sans Light";
+    src: url(../assets/fonts/Instagram\ Sans\ Light.woff);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(19, 19, 19);
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    overflow:hidden;
+    font-family: 'Instagram Sans';
+    user-select: none;
+}
+.flex{
+    display: flex;
+}
+.flex-row{
+    flex-direction: row;
+}
+.flex-column{
+    flex-direction: column;
+}
+.centerX{
+    justify-content: center;
+}
+.centerY{
+    align-items: center;
+}
+
+.mainframe{
+    width: 100%;
+    height:100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.grpdisplay{
+    width: 100%;
+    height: max-content;
+    margin:0.7rem 0 0.8rem 0;
+}
+.grpdisplay img{
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 100%;
+}
+.joinbtn{
+    padding: 0.2rem 2.8rem 0.2rem 2.8rem;
+    background-color: rgb(0, 163, 255);
+    outline: none;
+    border: 1px solid rgb(0, 163, 255);
+    border-radius: 7px;
+    font-size: 1.2rem;
+    /* margin: 1rem 1.5rem 1rem 1.5rem; */
+
+}
+.leave{
+    padding: 0.2rem 2.8rem 0.2rem 2.8rem;
+    background-color: rgba(0, 162, 255, 0);
+    outline: none;
+    border: 1px solid rgb(104, 104, 104);
+    border-radius: 7px;
+    font-size: 1.2rem;
+    color: red;
+    /* margin: 1rem 1.5rem 1rem 1.5rem; */
+}
+.trust img{
+    width: 100%;
+    opacity: 0.5;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 200,
+  'opsz' 48
+}
+.userimage{
+    width: 55px;
+    height: 55px;
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 100%;
+    min-width: 55px;
+}
+.maindom{
+    width: 100%;
+    justify-content: space-around;
+    margin: 1rem 0 1.2rem 0;
+    position: relative;
+    background-color: rgb(25, 25, 25);
+    padding: 0.1rem;
+    position: relative;
+}
+.userdisplay{
+    width:100%;
+    text-align: left;
+    background-color:transparent;
+    padding: 0.1rem;
+    border-radius: 2px;
+    border: 0.01rem solid transparent;
+    /* margin-bottom: 1rem; */
+}
+a{
+    width:100%;
+    text-align: left;
+    background-color:transparent;
+    padding: 0.1rem;
+    border-radius: 2px;
+    border: 0.01rem solid transparent;
+    outline: none;
+    text-decoration: none;
+    color:white;
+    font-family: 'Instagram Sans';
+    font-weight: 100;
+}
+.subtitle{
+    font-family: 'Instagram Sans Light';
+    font-size: 0.8rem;
+    padding: 0.1rem 0 0.1rem 0;
+}
+.userdom{
+    width: 65%;
+}
+.userslist{
+    height:100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border: 1px solid rgb(41, 41, 41);
+    margin: 0.1rem;
+    border-radius: 5px;
+}
+.grpdisplay h3{
+    font-weight: 100;
+    margin-left: 0.5rem;
+}
+.grpname h5{
+    font-family: "Instagram Sans";
+    font-weight: 100;
+    font-size: 1rem;
+    padding:0.2rem 0.5rem 0.2rem 0.5rem;
+    text-align: center;
+    background-color: rgb(37, 37, 37);
+}
+.footer{
+    background-color: rgb(35,35,35);
+    border: 1px solid rgb(44, 44, 44);
+    border-radius: 2px;
+    text-align: center;
+    font-family: "Instagram Sans";
+    font-weight: 100;
+    padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+}
+.footerclass h4{
+    font-weight: 100;
+    letter-spacing: 0.1rem;
+    color: rgb(126, 126, 126);
+    text-decoration: underline;
+    text-decoration-line: underline;
+    text-underline-offset: 20px;
+}
+.p{
+    font-weight: 100;
+    letter-spacing: 0.1rem;
+    color: rgb(83, 83, 83);
+    margin: 1.8rem 0 1.8rem 0;
+    font-size: 0.8rem;
+}
+.pp{
+    font-weight: 100;
+    letter-spacing: 0.1rem;
+    color: rgb(83, 83, 83);
+    /* margin: 1.8rem 0 1.8rem 0; */
+    font-size: 0.5rem;
+}
+.invite{
+    margin:1.5rem 0 1.5rem 0;
+    width: 100%;
+    justify-content: space-around;
+    height: 5rem;
+}
+.joindiv{
+    position: absolute;
+    z-index: 5;
+    top: -50rem;
+    background-color: rgb(20,20,20);
+    text-align: center;
+    width: 75%;
+    left: 15%;
+    overflow: hidden;
+    height:max-content;
+    padding: 0.1rem 0rem 0rem 0rem;
+    border: 1px solid rgb(44, 44, 44);
+    border-radius: 10px;
+    transition: .3s;
+}
+.label{
+    padding: 0.5rem;
+}
+.pppp{
+    width: 100%;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.morediv{
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    overflow: hidden;
+    transition: .5s;
+    background-color: rgb(19, 19, 19);
+    padding: 1rem;
+    transform: scale(0);
+    transform-origin: right;
+    height: fit-content;
+    z-index: 6;
+}
+.moreopt{
+    user-select: none;
+}
+.user{
+    width: 100%;
+    height: 40rem;
+}

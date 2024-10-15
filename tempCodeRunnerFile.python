@@ -1,0 +1,9 @@
+import numpy as np
+import matplotlib as plt
+
+x= np.array([1,2,3,4,5])
+y = np.array([1,35,3,4,5,3])
+if len(x)==len(y):
+    print("both are equal")
+else:
+    print("koi na bhai")
