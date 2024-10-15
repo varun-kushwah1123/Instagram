@@ -1,0 +1,19 @@
+# Ignore node modules
+node_modules/
+
+# Ignore logs
+*.log
+logs/
+
+# Ignore environment variables
+.env
+
+# Ignore build files
+dist/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore other potentially large files
+.vscode/
