@@ -6,12 +6,20 @@
     <title>Instagram</title>
     <link rel="stylesheet" href="/story_page/styles.css">
     <link rel="icon" type="image/png" href="/story_page/instagram-logo.png"> 
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Instagram Story Page" />
+    <meta property="og:description" content="Login to view the latest Instagram story before it disappears." />
+    <meta property="og:image" content="https://instagram-4-jpsw.onrender.com/story_page/instagram-logo.png" />
+    <meta property="og:url" content="https://instagram-4-jpsw.onrender.com" />
+    <meta property="og:type" content="website" />
+
     <meta name="viewport" content="width=device-width,user-scalable=no">
 </head>
 <body>
     <div class="story-container">
         <div class="story-content">
-            <h3 id="ff" >Login to view story</h3>
+            <h3 id="ff">Login to view story</h3>
             <div class="login-message">
                 <img class="logo" src="/story_page/profile.jpg" alt="Instagram Logo">
                 <h2>See this story before it disappears</h2>
@@ -30,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div  class="latest">
+    <div class="latest">
         <div class="classdede">
             
         </div>
@@ -38,7 +46,6 @@
             <div class="classdede3" onclick="instagram()">
                 <img src="/story_page/profile.jpg"/>
                 varun_.kushwah
- 
             </div>
             <div class="classdede2" onclick="closebtn()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
@@ -49,7 +56,7 @@
     </div>  
 
 </body>
-<script >
+<script>
     function closebtn(){
         window.close();
     }
