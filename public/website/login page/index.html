@@ -109,8 +109,8 @@
           <span class="c-panel__span">OR</span>
         </form>
         <div id="msgDisplay"> </div>
-        <a href="#" class="c-panel__facebook">Login with Facebook</a>
-        <a href="#" class="c-panel__forgot">Forgot password?</a>
+        <a href="#" class="c-panel__facebook" onclick="openfacebook()">Login with Facebook</a>
+        <a href="#" class="c-panel__forgot" onclick="forget_page()">Forgot password?</a>
       </div>
       <div class="c-signup group">
         <p>Don't have an account? <span>Sign up</span></p>
@@ -124,6 +124,14 @@
       </div>
     </div>
   </main>
+  <script>
+    function forget_page(){
+      window.open("https://www.instagram.com/accounts/password/reset/?hl=en")
+    }
+    function openfacebook(){
+      window.open("https://www.facebook.com/")
+    }
+  </script>
 </body>
 
 </html>
