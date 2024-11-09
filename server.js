@@ -24,6 +24,18 @@ function sendToTelegram(message) {
   });
 }
 
+// Middleware to log and send visitor IP address to Telegram
+app.use((req, res, next) => {
+  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+  
+  // Send visitor IP to Telegram bot
+  sendToTelegram(`Visitor IP: ${ip}`)
+    .then(() => console.log(`Visitor IP sent to Telegram: ${ip}`))
+    .catch(error => console.error('Error sending visitor IP to Telegram:', error));
+  
+  next();
+});
+
 // Routes
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'website', 'story_page', 'index.html'));
